@@ -62,7 +62,7 @@ export const StoreHeader = () => {
                     About Us
                   </Link>
                   <Link 
-                    to="" 
+                    to="/admin" 
                     className="px-4 py-2 hover:bg-gray-100 rounded-md transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
