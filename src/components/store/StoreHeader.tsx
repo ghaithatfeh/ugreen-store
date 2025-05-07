@@ -54,19 +54,19 @@ export const StoreHeader = () => {
                   >
                     Products
                   </a>
-                  <Link 
+                  {/* <Link 
                     to="" 
                     className="px-4 py-2 hover:bg-gray-100 rounded-md transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     About Us
-                  </Link>
+                  </Link> */}
                   <Link 
                     to="/admin" 
-                    className="px-4 py-2 hover:bg-gray-100 rounded-md transition-colors"
+                    className="px-4 py-2 hover:bg-gray-100 rounded-md transition-colors border border-ugreen-500 hover:bg-ugreen-500 hover:text-white"
                     onClick={() => setIsOpen(false)}
                   >
-                    Contact
+                    Dashboard
                   </Link>
                 </div>
               </CollapsibleContent>
@@ -84,14 +84,14 @@ export const StoreHeader = () => {
                     Products
                   </a>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link to="" className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-gray-100")}>
+                {/* <NavigationMenuItem>
+                  <Link to="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-gray-100")}>
                     About Us
                   </Link>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
                 <NavigationMenuItem>
-                  <Link to="" className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-gray-100")}>
-                    Contact
+                  <Link to="/admin" className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-gray-100 border border-ugreen-500 hover:bg-ugreen-500 hover:text-white")}>
+                    Dashboard
                   </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
