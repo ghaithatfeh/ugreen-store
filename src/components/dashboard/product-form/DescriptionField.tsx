@@ -18,7 +18,7 @@ export const DescriptionField = ({ control }: DescriptionFieldProps) => {
           <FormControl>
             <Textarea
               placeholder="Enter product description"
-              className="min-h-32"
+              className="min-h-24"
               {...field}
               value={field.value || ''}
             />

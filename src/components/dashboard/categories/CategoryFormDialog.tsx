@@ -96,6 +96,7 @@ export function CategoryFormDialog({
                   <FormControl>
                     <Textarea 
                       placeholder="Description (optional)"
+                      className="min-h-24"x
                       {...field}
                       value={field.value || ""}
                     />
