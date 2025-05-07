@@ -6,7 +6,7 @@ import { supabase } from "@/supabase/client";
 import { ProductFormData } from "@/types/product";
 import { useProductImageUtils } from "./useProductImageUtils";
 
-export const useCreateProduct = (onSuccess: () => void) => {
+export const useCreateProduct = (onSuccess: () => void, setCreateDialogOpen: (open: boolean) => void) => {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { uploadProductImage } = useProductImageUtils();
@@ -38,7 +38,7 @@ export const useCreateProduct = (onSuccess: () => void) => {
       await Promise.all(imagePromises);
       
       toast.success("Product created successfully");
-      navigate('/admin/products');
+      setCreateDialogOpen(false);
       onSuccess(); // Refresh the products list
     } catch (error) {
       console.error("Error creating product:", error);

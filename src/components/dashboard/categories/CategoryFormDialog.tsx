@@ -22,14 +22,6 @@ const formSchema = z.object({
   description: z.string().optional(),
 });
 
-type Category = {
-  id: string;
-  name: string;
-  description: string | null;
-  created_at: string;
-  updated_at: string;
-};
-
 interface CategoryFormDialogProps {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
@@ -64,7 +56,7 @@ export function CategoryFormDialog({
         description: initialValues.description || "",
       });
     }
-  }, [form, initialValues, isOpen]);
+  }, [isOpen]);
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>

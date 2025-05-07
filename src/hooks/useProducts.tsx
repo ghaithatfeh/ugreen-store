@@ -69,7 +69,7 @@ export const useProducts = () => {
     createProduct, 
     updateProduct, 
     deleteProduct 
-  } = useProductActions(fetchProducts);
+  } = useProductActions(fetchProducts, setIsCreateDialogOpen, setIsEditDialogOpen);
 
   // Handle actions with product forms - these are memoized to prevent re-renders
   const handleCreateProduct = useCallback(async (formData: ProductFormData): Promise<void> => {

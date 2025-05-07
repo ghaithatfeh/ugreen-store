@@ -5,7 +5,7 @@ import { supabase } from "@/supabase/client";
 import { ProductFormData } from "@/types/product";
 import { useProductImageUtils } from "./useProductImageUtils";
 
-export const useUpdateProduct = (onSuccess: () => void) => {
+export const useUpdateProduct = (onSuccess: () => void, setEditDialogOpen: (open: boolean) => void) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { uploadProductImage, deleteProductImages, setPrimaryImage } = useProductImageUtils();
   
@@ -51,6 +51,7 @@ export const useUpdateProduct = (onSuccess: () => void) => {
       
       toast.success("Product updated successfully");
       onSuccess(); // Refresh the products list
+      setEditDialogOpen(false);
     } catch (error) {
       console.error("Error updating product:", error);
       toast.error("Failed to update product");
